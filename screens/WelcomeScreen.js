@@ -23,7 +23,8 @@ import React, {Component} from 'react';
     userLogin = (emailId, password)=>{
         firebase.auth().signInWithEmailAndPassword(emailId, password)
         .then(()=>{
-          return Alert.alert("Successfully Login")
+          this.props.navigation.navigate('Donate')
+          
         })
         .catch((error)=> {
           var errorCode = error.code;
